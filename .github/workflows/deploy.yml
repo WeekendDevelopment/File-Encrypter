@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - react-page-skeleton  # The branch you want to deploy from
+      - main
 
 jobs:
   build:
