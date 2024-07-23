@@ -1,6 +1,7 @@
 #Workflow name
 name: Pull Request Build Pipeline
 on: pull_request
+concurrency: preview-${{ github.ref }}
 jobs:
   #Build job
   node_pipeline:
@@ -23,3 +24,8 @@ jobs:
       #Run Node Build
       - name: Run npm build
         run: npm run build
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./dist/
+          preview-branch: staging
