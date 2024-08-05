@@ -26,17 +26,14 @@ jobs:
       #Check-out your repository under $GITHUB_WORKSPACE, so your workflow can access it
       - uses: actions/checkout@v3
       #Set up Node 18
-      - name: Set up Node
-        uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: 18
-          cache: 'npm'
+          cache: 'yarn'
       #Node Dependency Installation
       - name: Installing Dependencies
-        run: npm install
-      #Fix package-lock.json if it is broken
-      - name: Fixing package-lock.json
-        run: npm install && npm ci
+        run: npm run yarn-install
       #Run Node Build
       - name: Run npm build
         run: npm run build
