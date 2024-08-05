@@ -23,6 +23,11 @@ jobs:
           node-version: 18
           cache: 'yarn'
 
+      - name: Clean node_modules and package-lock.json
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+
       - name: Installing Dependencies
         run: npm install
 
