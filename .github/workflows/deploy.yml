@@ -1,5 +1,5 @@
 #Workflow name
-name: Build and Deploy to GitHub Pages
+name: Old Build and Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
